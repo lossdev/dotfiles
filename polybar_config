@@ -23,7 +23,7 @@ border-left-size = 20
 border-top-size = 15
 padding-right = 2
 module-margin = 2
-modules-left = powermenu
+modules-left = powermenu terminal firefox dolphin spotify
 modules-right = xbacklight pulseaudio battery time
 
 cursor-click = pointer
@@ -113,25 +113,25 @@ bar-indicator = %{T5}%{T-}
 bar-fill = %{T6}─%{T-}
 bar-empty = %{T6}─%{T-}
 
-[module/menu]
-type = custom/menu
-exand-right = true
-format-spacing = 1
+[module/terminal]
+type = custom/text
+content = %{T4}%{T-}
+click-left = konsole
 
-label-open = 
-label-close = 
-label-open-foreground = {colors.foreground}
-label-separator = |
-label-separator-foreground = {colors.foreground}
+[module/firefox]
+type = custom/text
+content = %{T7}%{T-}
+click-left = firefox
 
-menu-0-0 = %{T4}%{T-}
-menu-0-0-exec = konsole
-menu-0-1 = %{T7}%{T-}
-menu-0-1-exec = firefox
-menu-0-2 = %{T4}%{T-}
-menu-0-2-exec = dolphin
-menu-0-3 = %{T7}%{T-}
-menu-0-3-exec = spotify
+[module/dolphin]
+type = custom/text
+content = %{T4}%{T-}
+click-left = dolphin
+
+[module/spotify]
+type = custom/text
+content = %{T7}%{T-}
+click-left = spotify
 
 [global/wm]
 margin-top = 5
