@@ -105,6 +105,7 @@ alias ll='ls -al'
 alias python=python3
 alias pip=pip3
 alias please=sudo
+alias docker-remove="docker rm $(docker ps -aq)"
 source /Users/bmw417/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### Added by Zplugin's installer
 source "$HOME/.zplugin/bin/zplugin.zsh"
