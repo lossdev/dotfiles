@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bmw417/.oh-my-zsh"
+export ZSH="/Users/lossdev/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -98,15 +98,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/Users/bmw417/bin:$PATH"
+export PATH="$PATH:/Users/lossdev/bin:/usr/local/Cellar/mtr/0.94/sbin"
+alias ls=exa
 alias l=ls
 alias la='ls -a'
 alias ll='ls -al'
+alias gob='go build'
 alias python=python3
 alias pip=pip3
 alias please=sudo
-alias docker-remove="docker rm $(docker ps -aq)"
-source /Users/bmw417/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias stat='stat -x'
+alias docker-remove='docker rm $(docker ps -aq)'
+alias mk-init='eval $(minikube docker-env)'
+alias mk-unset='eval $(minikube docker-env -u)'
+source /Users/lossdev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### Added by Zplugin's installer
 source "$HOME/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
