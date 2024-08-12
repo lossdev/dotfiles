@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -98,8 +105,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$PATH:/Users/lossdev/bin:/usr/local/Cellar/mtr/0.94/sbin"
-alias ls=exa
+export PATH="$PATH:$HOME/bin:$HOME/go/bin:/usr/local/Cellar/mtr/0.94/sbin"
+alias ls=eza
 alias l=ls
 alias la='ls -a'
 alias ll='ls -al'
@@ -108,16 +115,15 @@ alias python=python3
 alias pip=pip3
 alias please=sudo
 alias stat='stat -x'
+alias code='open /Applications/Visual\ Studio\ Code.app'
 alias docker-remove='docker rm $(docker ps -aq)'
-alias mk-init='eval $(minikube docker-env)'
-alias mk-unset='eval $(minikube docker-env -u)'
 source /Users/lossdev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
-export GPG_TTY=`tty`
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export GOPRIVATE=github.com/lossdev
